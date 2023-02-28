@@ -1,3 +1,5 @@
+
+
 body{
     display: flex;
     justify-content: center;
@@ -5,23 +7,71 @@ body{
     min-height: 100vh;
 }
 
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .container{
     display: flex;
     justify-content: center;
-    align-self: center;
     align-items: center;
-    height: 200px;
-    width: 30%;
+    min-height: 40vh;
+    width: 25%;
     border: 1px solid black;
-    flex-wrap: wrap;
+    background-color: #78d1e1;
+    flex-direction: column;
     padding: 20px;
 }
 
-.input{
-    margin: 10px;
+form{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
 
-.input > input{
-    width: 50%;
-    margin-top: 3px;
+form > input{
+    border: 0px;
+    border-radius: 5px;
+    height: 30px;
+    display: flex;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.buttons > select{
+    margin-right: 12px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.buttons > button, select {
+    width: 120px;
+    height: 30px;
+}
+
+.buttons > button {
+	border: none;
+	cursor: pointer;
+	font-weight: 100;
+	font-size: 1.2rem;
+	color: black;
+	border-radius: 6px;
+	background-color: #9676c5;
+}
+
+.buttons > button:hover {
+	background-color: #6f5597;
 }

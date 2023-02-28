@@ -13,18 +13,18 @@
     <div class="container">
         <h1>Calculadora Básica!</h1>
         <form>
-            <div class="input">
-                <input type="text" id="n1">
-                <input type="text" id="n2">
+            <input type="text" id="n1" placeholder="Numero 1">
+            <input type="text" id="n2" placeholder="Numero 2">
+            <input type="text" class="resposta" id="resposta" readonly placeholder="Resposta">
+            <div class="buttons">
+                <select id="cmbOp">
+                    <option value="+">+</option> 
+                    <option value="-">-</option>
+                    <option value="X">X</option>
+                    <option value="/">/</option>
+                </select>
+                <button class="somar" type="button" onclick="calc()">Calcular</button>    
             </div>
-            <select id="cmbOp">
-                <option value="+">+</option> 
-                <option value="-">-</option>
-                <option value="X">X</option>
-                <option value="/">/</option>
-            </select>
-            <button class="somar" type="button" onclick="calc()">Calcular</button>
-            <input type="text" class="resposta" id="resposta" readonly>
         </form>
     </div>
 
