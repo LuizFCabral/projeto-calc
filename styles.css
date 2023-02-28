@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    height: 200px;
+    width: 30%;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.input{
+    margin: 10px;
+}
+
+.input > input{
+    width: 50%;
+    margin-top: 3px;
+}
