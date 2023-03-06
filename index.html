@@ -24,46 +24,62 @@
                     <option value="/">/</option>
                     <option value="log">log</option>
                 </select>
-                <button class="calc" type="button" onclick="calc()">Calcular</button>    
-            </div>
+                <button class="calc" type="button" onclick="calc()">Calcular</button> 
+            </div> 
         </form>
+    </div>
+    <div class="historico" id="hist">
+        <h2>Histórico</h2>
     </div>
 
 </body>
 
 <script>
-
+        const hist =[];
         const calc = ()=>{
-            let n1 = document.getElementById("n1");
-            let n2 = document.getElementById("n2");
+            let n1 = parseFloat(document.getElementById("n1").value);
+            let n2 = parseFloat(document.getElementById("n2").value);
             let ops = document.getElementById("cmbOp"); 
+            
             let select = ops.options[ops.selectedIndex].value;
             let r;
             switch(select){
                 case '+': 
-                    r = n1.value + n2.value;
+                    r = n1 + n2;
                     break;
                 case '-':
-                    r = n1.value - n2.value; 
+                    r = n1 - n2; 
                     break;
                 case 'X':
-                    r = n1.value * n2.value;
+                    r = n1 * n2;
                     break;
                 case '/':
-                    r = n1.value / n2.value;
+                    r = n1 / n2;
                     break;
                 case 'log':
-                    r = Math.log(n1.value) / Math.log(n2.value); //calcula o logaritmo de n1 na base n2
+                    r = Math.log(n1) / Math.log(n2); //calcula o logaritmo de n1 na base n2
                     break;
                 default:
                     alert("Opção Inválida!");
                     break;
             }
+            hist.push({
+                num1: n1,
+                num2: n2,
+                operacao: select,   
+                resp: r
+            })
+            console.log(hist);
+            document.getElementById("resposta").value = r;
+            document.getElementById("n1").value = ""
+            document.getElementById("n2").value = ""
+            document.getElementById("n1").focus();
+
+            hist.map((hist)=>{
+                let historico = createElement('<div>' + hist.n1 + ' ' + hist.operacao + ' '+ hist.n2+ ' = ' + hist.resp + '</div>')
+                document.getElementById("hist").appendChild(historico)
+            })
             
-            document.getElementById("resposta").value = r.toFixed(2);
-            n1.value = ""
-            n2.value = ""
-            n1.focus()
         }
 
         const submit = (event)=>{
