@@ -22,8 +22,9 @@
                     <option value="-">-</option>
                     <option value="X">X</option>
                     <option value="/">/</option>
+                    <option value="log">log</option>
                 </select>
-                <button class="somar" type="button" onclick="calc()">Calcular</button>    
+                <button class="calc" type="button" onclick="calc()">Calcular</button>    
             </div>
         </form>
     </div>
@@ -51,9 +52,15 @@
                 case '/':
                     r = n1.value / n2.value;
                     break;
+                case 'log':
+                    r = Math.log(n1.value) / Math.log(n2.value); //calcula o logaritmo de n1 na base n2
+                    break;
+                default:
+                    alert("Opção Inválida!");
+                    break;
             }
             
-            document.getElementById("resposta").value = r
+            document.getElementById("resposta").value = r.toFixed(2);
             n1.value = ""
             n2.value = ""
             n1.focus()

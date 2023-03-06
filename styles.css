@@ -41,6 +41,7 @@ form > input{
     display: flex;
     margin-top: 12px;
     width: 100%;
+    padding-left: 10px;
 }
 
 .buttons{
@@ -55,6 +56,7 @@ form > input{
     margin-right: 12px;
     border: 0px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .buttons > button, select {
@@ -74,4 +76,8 @@ form > input{
 
 .buttons > button:hover {
 	background-color: #6f5597;
+}
+
+.resposta{
+    outline: none;
 }
