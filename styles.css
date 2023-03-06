@@ -1,68 +1,67 @@
-
-
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 }
 
-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 40vh;
-    width: 25%;
-    border: 1px solid black;
-    background-color: #78d1e1;
-    flex-direction: column;
-    padding: 20px;
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 40vh;
+	width: 25%;
+	border: 1px solid black;
+	background-color: #78d1e1;
+	flex-direction: column;
+	padding: 20px;
 }
 
-form{
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    min-width: 50%;
+form {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-self: center;
+	min-width: 50%;
 }
 
-form > input{
-    border: 0px;
-    border-radius: 5px;
-    height: 30px;
-    display: flex;
-    margin-top: 12px;
-    width: 100%;
-    padding-left: 10px;
+form > input {
+	border: 0px;
+	border-radius: 5px;
+	height: 30px;
+	display: flex;
+	margin-top: 12px;
+	width: 100%;
+	padding-left: 10px;
 }
 
-.buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 24px;
-    width: 100%;
+.buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 24px;
+	width: 100%;
 }
 
-.buttons > select{
-    margin-right: 12px;
-    border: 0px;
-    border-radius: 5px;
-    text-align: center;
+.buttons > select {
+	margin-right: 12px;
+	border: 0px;
+	border-radius: 5px;
+	text-align: center;
 }
 
-.buttons > button, select {
-    width: 120px;
-    height: 30px;
+.buttons > button,
+select {
+	width: 120px;
+	height: 30px;
 }
 
 .buttons > button {
@@ -79,14 +78,14 @@ form > input{
 	background-color: #6f5597;
 }
 
-.resposta{
-    outline: none;
+.resposta {
+	outline: none;
 }
 
-.hist{
-    margin-top: 20px;
-    padding: 5px;
-    border: none;
+.hist {
+	margin-top: 20px;
+	padding: 5px;
+	border: none;
 	cursor: pointer;
 	font-weight: 100;
 	font-size: 1.2rem;
@@ -95,14 +94,16 @@ form > input{
 	background-color: #9f4faa;
 }
 
-.historico{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    right: 18%;
-    top: 28.4%;
-    height: 100px;
-    max-height: 40vh;
-    width: 250px;
-    background-color: #817083;
+.historico {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	right: 16%;
+	top: 28.4%;
+	height: 100px;
+	height: 40vh;
+	width: 250px;
+	background-color: #817083;
+	overflow: auto;
 }

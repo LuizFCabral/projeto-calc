@@ -1,90 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Calculadora</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Calculadora</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Calculadora Básica!</h1>
+			<form>
+				<input type="text" id="n1" placeholder="Numero 1" />
+				<input type="text" id="n2" placeholder="Numero 2" />
+				<input
+					type="text"
+					class="resposta"
+					id="resposta"
+					readonly
+					placeholder="Resposta"
+				/>
+				<div class="buttons">
+					<select id="cmbOp">
+						<option value="+">+</option>
+						<option value="-">-</option>
+						<option value="X">X</option>
+						<option value="/">/</option>
+						<option value="log">log</option>
+					</select>
+					<button class="calc" type="button" onclick="calc()">Calcular</button>
+				</div>
+			</form>
+		</div>
+		<div class="historico" id="hist">
+			<h2>Histórico</h2>
+		</div>
+	</body>
 
-    
-</head>
-<body>
-    <div class="container">
-        <h1>Calculadora Básica!</h1>
-        <form>
-            <input type="text" id="n1" placeholder="Numero 1">
-            <input type="text" id="n2" placeholder="Numero 2">
-            <input type="text" class="resposta" id="resposta" readonly placeholder="Resposta">
-            <div class="buttons">
-                <select id="cmbOp">
-                    <option value="+">+</option> 
-                    <option value="-">-</option>
-                    <option value="X">X</option>
-                    <option value="/">/</option>
-                    <option value="log">log</option>
-                </select>
-                <button class="calc" type="button" onclick="calc()">Calcular</button> 
-            </div> 
-        </form>
-    </div>
-    <div class="historico" id="hist">
-        <h2>Histórico</h2>
-    </div>
+	<script>
+		const hist = [];
+		const calc = () => {
+			let n1 = parseFloat(document.getElementById("n1").value);
+			let n2 = parseFloat(document.getElementById("n2").value);
+			let ops = document.getElementById("cmbOp");
 
-</body>
+			let select = ops.options[ops.selectedIndex].value;
+			let r;
+			switch (select) {
+				case "+":
+					r = n1 + n2;
+					break;
+				case "-":
+					r = n1 - n2;
+					break;
+				case "X":
+					r = n1 * n2;
+					break;
+				case "/":
+					r = n1 / n2;
+					break;
+				case "log":
+					r = Math.log(n1) / Math.log(n2); //calcula o logaritmo de n1 na base n2
+					break;
+				default:
+					alert("Opção Inválida!");
+					break;
+			}
 
-<script>
-        const hist =[];
-        const calc = ()=>{
-            let n1 = parseFloat(document.getElementById("n1").value);
-            let n2 = parseFloat(document.getElementById("n2").value);
-            let ops = document.getElementById("cmbOp"); 
-            
-            let select = ops.options[ops.selectedIndex].value;
-            let r;
-            switch(select){
-                case '+': 
-                    r = n1 + n2;
-                    break;
-                case '-':
-                    r = n1 - n2; 
-                    break;
-                case 'X':
-                    r = n1 * n2;
-                    break;
-                case '/':
-                    r = n1 / n2;
-                    break;
-                case 'log':
-                    r = Math.log(n1) / Math.log(n2); //calcula o logaritmo de n1 na base n2
-                    break;
-                default:
-                    alert("Opção Inválida!");
-                    break;
-            }
-            hist.push({
-                num1: n1,
-                num2: n2,
-                operacao: select,   
-                resp: r
-            })
-            console.log(hist);
-            document.getElementById("resposta").value = r;
-            document.getElementById("n1").value = ""
-            document.getElementById("n2").value = ""
-            document.getElementById("n1").focus();
+			const elemento = document.createElement("div");
+			elemento.textContent = `${n1} ${select} ${n2} = ${r.toFixed(2)}`;
+			document.getElementById("hist").appendChild(elemento);
 
-            hist.map((hist)=>{
-                let historico = createElement('<div>' + hist.n1 + ' ' + hist.operacao + ' '+ hist.n2+ ' = ' + hist.resp + '</div>')
-                document.getElementById("hist").appendChild(historico)
-            })
-            
-        }
+			console.log(hist);
+			document.getElementById("resposta").value = r;
+			document.getElementById("n1").value = "";
+			document.getElementById("n2").value = "";
+			document.getElementById("n1").focus();
+		};
 
-        const submit = (event)=>{
-            e.preventDefault()
-        }
-        
-    </script>
+		const submit = (event) => {
+			e.preventDefault();
+		};
+	</script>
 </html>
